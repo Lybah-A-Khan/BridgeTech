@@ -188,7 +188,7 @@ export default function Home() {
                 </blockquote>
                 <div>
                   <p className="font-semibold text-sm">Saleh's Mom</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">AI Course · Bay Area</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Python Course · Bay Area</p>
                 </div>
               </div>
             </ScrollReveal>

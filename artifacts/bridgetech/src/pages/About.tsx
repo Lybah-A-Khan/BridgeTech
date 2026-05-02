@@ -39,7 +39,7 @@ export default function About() {
 
             <h3 className="text-3xl mt-12 mb-6">Impact in Action</h3>
             <p>
-              One of our middle school students, Saleh, arrived nervous about coding — unsure if it was really "for him." He completed the full program, loved it so much he started a coding club at his own school, and then used what he learned in our AI course — specifically Google Teachable Machine — to build an innovation project for a FIRST Lego League (FLL) robotics competition. He won an award. His mom reached out: <em>"He would not have achieved that without learning from you."</em>
+              One of our middle school students, Saleh, arrived nervous about coding — unsure if it was really "for him." He completed the full program, loved it so much he started a coding club at his own school, and then used AI concepts we introduced in our Python course — specifically Google Teachable Machine — to build an innovation project for a FIRST Lego League (FLL) robotics competition. He won an award. His mom reached out: <em>"He would not have achieved that without learning from you."</em>
             </p>
             <p>
               That's what BridgeTech is for. Not just teaching syntax — opening doors.
