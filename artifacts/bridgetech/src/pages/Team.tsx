@@ -15,7 +15,7 @@ const coreTeam = [
   },
   {
     name: "Hafsah Syed",
-    role: "Co-Founder & Vice President",
+    role: "Vice President",
     bio: "Fellow high schooler and CS enthusiast helping lead BridgeTech's growth, operations, and strategic direction. Passionate about making tech education equitable.",
     linkedin: "https://www.linkedin.com/in/hafsahmsyed/",
     initials: "HS",
@@ -54,7 +54,7 @@ export default function Team() {
               The <span className="text-primary italic">Team</span>.
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Two high schoolers on a mission. Building something that matters — and growing a team to match.
+              Driven by a shared belief in educational equity and the power of technology to transform lives.
             </p>
           </ScrollReveal>
 
