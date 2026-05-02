@@ -10,39 +10,44 @@ export default function About() {
               Our Story
             </div>
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8">
-              From High School to <span className="text-primary italic">Global Impact</span>.
+              From High School to <span className="text-primary italic">Real Impact</span>.
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1} className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-a:text-primary">
             <p className="text-xl text-muted-foreground leading-relaxed">
-              BridgeTech started with a simple observation: the digital divide is real, and it's holding brilliant minds back. Founded by high school student Lybah A. Khan, BridgeTech was born out of a desire to make computer science education accessible to everyone, regardless of their background or zip code.
+              BridgeTech started with a simple observation: the digital divide is real, and it's holding brilliant minds back. Founded in 2024 by high school student Lybah A. Khan, BridgeTech was built to make computer science education accessible — regardless of background, zip code, or budget.
             </p>
 
             <h3 className="text-3xl mt-12 mb-6">The Founding Story</h3>
             <p>
-              While navigating her own journey in computer science, Lybah realized that many of her peers, especially those from underrepresented communities, lacked access to basic coding resources, mentorship, and encouragement. What started as a small initiative to teach local kids the basics of Python and Scratch quickly gained momentum.
+              While navigating her own path in computer science, Lybah noticed that many students around her — especially those from underrepresented communities — had no real access to coding resources, mentorship, or encouragement. She started small: teaching a handful of local kids the basics of programming. It grew fast.
             </p>
             <p>
-              It became clear that the need extended far beyond a single school or neighborhood. There were entire communities—from young students eager to build their first game, to adults and immigrants needing fundamental digital literacy—who were being left behind by the rapid pace of technological advancement.
+              What began as a single initiative became something bigger. Today, BridgeTech has served over <strong>150 students</strong>, partnered with <strong>3+ community centers</strong> across California, and built curriculum that meets learners where they actually are — from 3rd grade HTML projects to high school Python applications.
             </p>
 
             <div className="my-16 p-8 bg-muted rounded-[2rem] border border-border relative overflow-hidden">
               <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, hsl(var(--primary)) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
               <div className="relative z-10">
                 <blockquote className="text-2xl font-serif italic text-foreground mb-4 border-l-4 border-primary pl-6">
-                  "Technology should be a bridge, not a barrier. Our goal isn't just to teach coding; it's to provide the tools for economic mobility and creative expression."
+                  "Technology should be a bridge, not a barrier. Our goal isn't just to teach coding — it's to open doors that were previously closed."
                 </blockquote>
                 <p className="text-muted-foreground font-medium ml-6">— Lybah A. Khan, Founder</p>
               </div>
             </div>
 
+            <h3 className="text-3xl mt-12 mb-6">Affordable by Design</h3>
+            <p>
+              BridgeTech programs are priced between $20 and $50 — intentionally. We believe quality CS education shouldn't require a wealthy zip code. No student is ever turned away for financial need. If cost is a barrier, we'll find a way to make it work.
+            </p>
+
             <h3 className="text-3xl mt-12 mb-6">The Path to Nonprofit Status</h3>
             <p>
-              Today, BridgeTech is in the process of becoming a registered 501(c)(3) nonprofit organization in California. This transition represents our commitment to scaling our impact, securing vital resources, and ensuring the long-term sustainability of our free programs. 
+              BridgeTech is currently in the process of becoming a registered 501(c)(3) nonprofit in California. This step reflects our commitment to long-term sustainability, expanded reach, and deeper partnerships with schools and organizations who share our mission.
             </p>
             <p>
-              As we grow, our focus remains unwavering: providing high-quality, completely free technology education and digital literacy support to those who need it most.
+              As we grow, the focus stays the same: real programs, real students, and an unwavering belief that the next generation of builders deserves a seat at the table.
             </p>
           </ScrollReveal>
         </div>

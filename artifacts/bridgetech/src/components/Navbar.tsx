@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import logoPath from "@assets/BridgeTech_1777764239711.png";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -29,15 +30,17 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent ${
-        isScrolled ? "bg-background/90 backdrop-blur-md border-border shadow-sm py-3" : "bg-transparent py-5"
+        isScrolled ? "bg-background/90 backdrop-blur-md border-border shadow-sm py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group" data-testid="link-home">
-          <div className="w-8 h-8 rounded-md bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl transition-transform group-hover:scale-105">
-            B
-          </div>
-          <span className="font-serif text-2xl font-bold tracking-tight text-primary">BridgeTech</span>
+          <img
+            src={logoPath}
+            alt="BridgeTech logo"
+            className="h-10 w-10 rounded-full object-cover transition-transform group-hover:scale-105"
+          />
+          <span className="font-serif text-xl font-bold tracking-tight text-primary">BridgeTech</span>
         </Link>
 
         {/* Desktop Nav */}

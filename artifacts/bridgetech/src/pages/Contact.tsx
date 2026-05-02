@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useState, useRef } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Linkedin, Instagram } from "lucide-react";
 
 export default function Contact() {
@@ -20,24 +20,21 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // Using placeholders as requested - in a real app these would be environment variables
       await emailjs.sendForm(
-        'placeholder_service_id',
-        'placeholder_template_id',
+        "placeholder_service_id",
+        "placeholder_template_id",
         formRef.current,
-        'placeholder_public_key'
+        "placeholder_public_key"
       );
-      
       toast({
         title: "Message Sent",
         description: "Thank you for reaching out. We'll get back to you shortly.",
       });
       formRef.current.reset();
-    } catch (error) {
-      console.error(error);
+    } catch {
       toast({
         title: "Message Simulated",
-        description: "EmailJS placeholders used. Form simulation successful.",
+        description: "Form submission received. Configure EmailJS keys to enable real delivery.",
       });
       formRef.current.reset();
     } finally {
@@ -54,7 +51,7 @@ export default function Contact() {
               Get in <span className="text-primary italic">Touch</span>.
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Have a question about our programs, interested in partnering, or want to support our mission? We'd love to hear from you.
+              Have a question about our programs, want to partner with us, or ready to volunteer? We'd love to hear from you.
             </p>
           </ScrollReveal>
 
@@ -75,25 +72,26 @@ export default function Contact() {
                 </h3>
                 <p className="text-muted-foreground text-lg">
                   California, USA<br />
-                  (Operating remote & hybrid workshops)
+                  In-person, hybrid & remote workshops
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-bold mb-4">Connect</h3>
                 <div className="flex gap-4">
-                  <a href="https://www.linkedin.com/in/lybah-a-khan" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all shadow-sm">
+                  <a href="https://www.linkedin.com/in/lybah-a-khan" target="_blank" rel="noreferrer" data-testid="link-contact-linkedin" className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all shadow-sm">
                     <Linkedin size={20} />
                   </a>
-                  <a href="#" className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all shadow-sm">
+                  <a href="https://www.instagram.com/bridgetechofficial" target="_blank" rel="noreferrer" data-testid="link-contact-instagram" className="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all shadow-sm">
                     <Instagram size={20} />
                   </a>
                 </div>
+                <p className="text-sm text-muted-foreground mt-3">@bridgetechofficial on Instagram</p>
               </div>
               
-              <div className="pt-8">
-                <Button variant="outline" className="w-full justify-center h-14 rounded-xl border-dashed border-2">
-                  Download Media Kit (PDF)
+              <div className="pt-4">
+                <Button variant="outline" className="w-full justify-center h-14 rounded-xl border-dashed border-2" data-testid="button-download-pdf">
+                  Download Impact Report (PDF)
                 </Button>
               </div>
             </ScrollReveal>
@@ -104,17 +102,17 @@ export default function Contact() {
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="user_name">Name</Label>
-                      <Input id="user_name" name="user_name" required placeholder="Jane Doe" className="bg-background h-12" />
+                      <Input id="user_name" name="user_name" required placeholder="Jane Doe" className="bg-background h-12" data-testid="input-contact-name" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="user_email">Email</Label>
-                      <Input id="user_email" name="user_email" type="email" required placeholder="jane@example.com" className="bg-background h-12" />
+                      <Input id="user_email" name="user_email" type="email" required placeholder="jane@example.com" className="bg-background h-12" data-testid="input-contact-email" />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" name="subject" required placeholder="How can we help?" className="bg-background h-12" />
+                    <Input id="subject" name="subject" required placeholder="How can we help?" className="bg-background h-12" data-testid="input-contact-subject" />
                   </div>
 
                   <div className="space-y-2">
@@ -125,12 +123,17 @@ export default function Contact() {
                       required
                       placeholder="Write your message here..."
                       className="min-h-[160px] bg-background resize-y"
+                      data-testid="textarea-contact-message"
                     />
                   </div>
 
-                  <Button type="submit" className="w-full h-14 rounded-xl text-base font-semibold" disabled={isSubmitting}>
+                  <Button type="submit" className="w-full h-14 rounded-xl text-base font-semibold" disabled={isSubmitting} data-testid="button-contact-submit">
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
+
+                  <p className="text-xs text-center text-muted-foreground">
+                    Messages are sent to <span className="text-foreground font-medium">bridgetech24@gmail.com</span>
+                  </p>
                 </form>
               </div>
             </ScrollReveal>

@@ -1,14 +1,13 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, Code2, Users, BookOpen, GraduationCap } from "lucide-react";
+import { ArrowRight, Code2, Users, Building2, GraduationCap } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-background min-h-[90vh] flex items-center">
-        {/* Decorative background shapes */}
         <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-[500px] h-[500px] rounded-full bg-secondary/5 blur-3xl pointer-events-none" />
         
@@ -17,13 +16,13 @@ export default function Home() {
             <ScrollReveal className="max-w-2xl">
               <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm text-primary mb-8 font-medium">
                 <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse" />
-                Empowering the next generation
+                Est. 2024 · Connecting Generations Through Technology
               </div>
               <h1 className="text-6xl sm:text-7xl lg:text-8xl font-serif font-bold text-foreground leading-[1.1] mb-6 tracking-tight">
                 Computer <span className="text-primary italic">Science</span> for Everyone.
               </h1>
               <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-xl">
-                Bridging the gap in technology education for underserved communities. We believe coding is a fundamental right, not a privilege.
+                Bridging the gap in technology education for underserved communities. Real programs, real kids, affordable access — because coding shouldn't be a privilege.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <Button asChild size="lg" className="rounded-full px-8 text-base h-14 bg-primary hover:bg-primary/90">
@@ -41,7 +40,6 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-[3rem] overflow-hidden border border-border/50">
                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, hsl(var(--primary)) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
                 
-                {/* Abstract geometric composition */}
                 <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary rounded-full mix-blend-multiply opacity-80 blur-xl animate-pulse" />
                 <div className="absolute top-1/3 right-1/4 w-40 h-40 bg-secondary rounded-full mix-blend-multiply opacity-80 blur-xl" style={{ animationDelay: '1s', animationDuration: '3s' }} />
                 <div className="absolute bottom-1/4 left-1/3 w-36 h-36 bg-accent rounded-full mix-blend-multiply opacity-80 blur-xl" style={{ animationDelay: '2s', animationDuration: '4s' }} />
@@ -73,10 +71,10 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {[
-              { number: "200+", label: "Students Impacted", icon: Users },
-              { number: "15+", label: "Workshops Hosted", icon: BookOpen },
-              { number: "5+", label: "Partner Schools", icon: GraduationCap },
-              { number: "100%", label: "Free Programs", icon: Code2 },
+              { number: "150+", label: "Students Impacted", icon: Users },
+              { number: "3+", label: "Community Centers", icon: Building2 },
+              { number: "4", label: "Active Programs", icon: Code2 },
+              { number: "$20–50", label: "Affordable Pricing", icon: GraduationCap },
             ].map((stat, i) => (
               <ScrollReveal key={i} delay={i * 0.1} className="text-center">
                 <div className="mx-auto w-12 h-12 mb-4 rounded-xl bg-primary-foreground/10 flex items-center justify-center">
@@ -90,6 +88,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Programs Preview */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6 md:px-12">
+          <ScrollReveal className="max-w-2xl mb-14">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+              What We <span className="text-primary italic">Teach</span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Curriculum designed for every stage — from a 3rd grader building their first webpage to a high schooler writing Python applications.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { grade: "Grades 3–6", lang: "HTML, CSS & JS", desc: "Build real webpages from scratch using the foundational languages of the web.", badge: "Active" },
+              { grade: "Grades 7–12", lang: "Python", desc: "From algorithms to projects — a full Python curriculum for middle and high schoolers.", badge: "Active" },
+              { grade: "All Grades", lang: "Java", desc: "Object-oriented programming fundamentals. Our next cohort launches soon.", badge: "Coming Soon" },
+              { grade: "Elementary–HS", lang: "AI Crash Course", desc: "How AI works, what it means for the future, and how to build with it — level-adjusted per age group.", badge: "In Development" },
+            ].map((prog, i) => (
+              <ScrollReveal key={i} delay={i * 0.1}>
+                <div className="h-full bg-card border border-border rounded-2xl p-6 hover:border-primary/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                  <div className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold mb-4 ${
+                    prog.badge === "Active" ? "bg-green-500/10 text-green-600" :
+                    prog.badge === "Coming Soon" ? "bg-primary/10 text-primary" :
+                    "bg-secondary/10 text-secondary-foreground"
+                  }`}>
+                    {prog.badge}
+                  </div>
+                  <p className="text-xs text-muted-foreground font-medium mb-1 uppercase tracking-wider">{prog.grade}</p>
+                  <h3 className="text-xl font-serif font-bold mb-3">{prog.lang}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{prog.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={0.3} className="mt-10 flex justify-center">
+            <Button asChild variant="outline" className="rounded-full px-8 h-12">
+              <Link href="/projects">View All Programs</Link>
+            </Button>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Newsletter */}
       <section className="py-24 bg-card">
         <div className="container mx-auto px-6 md:px-12">
@@ -98,9 +140,9 @@ export default function Home() {
             <div className="relative z-10">
               <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Stay in the Loop</h2>
               <p className="text-muted-foreground mb-8 text-lg max-w-xl mx-auto">
-                Subscribe to our newsletter for updates on new workshops, partnerships, and our journey to 501(c)(3) status.
+                Subscribe for updates on new cohorts, workshops, partnerships, and our journey to 501(c)(3) status.
               </p>
-              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onSubmit={(e) => { e.preventDefault(); alert("Thanks for subscribing!"); }}>
+              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onSubmit={(e) => { e.preventDefault(); alert("Thanks for subscribing! We'll be in touch."); }}>
                 <input 
                   type="email" 
                   placeholder="Your email address" 

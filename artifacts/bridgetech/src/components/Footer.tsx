@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Linkedin, Instagram } from "lucide-react";
+import logoPath from "@assets/BridgeTech_1777764239711.png";
 
 export function Footer() {
   return (
@@ -7,20 +8,25 @@ export function Footer() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6 inline-flex">
-              <div className="w-8 h-8 rounded-md bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl">
-                B
-              </div>
+            <Link href="/" className="flex items-center gap-3 mb-6 inline-flex">
+              <img
+                src={logoPath}
+                alt="BridgeTech logo"
+                className="h-10 w-10 rounded-full object-cover"
+              />
               <span className="font-serif text-2xl font-bold tracking-tight text-primary">BridgeTech</span>
             </Link>
-            <p className="text-muted-foreground max-w-sm mb-6 leading-relaxed">
-              Bridging the gap in computer science education for underserved communities. We believe technology education should be accessible, empowering, and completely free.
+            <p className="text-muted-foreground max-w-sm mb-2 leading-relaxed">
+              Bridging the gap in computer science education for underserved communities. Connecting generations through technology since 2024.
+            </p>
+            <p className="text-muted-foreground/70 text-sm mb-6 max-w-sm">
+              Programs start at $20–50. No student is turned away for financial need.
             </p>
             <div className="flex gap-4">
               <a href="https://www.linkedin.com/in/lybah-a-khan" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors" data-testid="link-footer-linkedin">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors" data-testid="link-footer-instagram">
+              <a href="https://www.instagram.com/bridgetechofficial" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors" data-testid="link-footer-instagram">
                 <Instagram size={18} />
               </a>
             </div>
@@ -31,7 +37,7 @@ export function Footer() {
             <ul className="flex flex-col gap-3">
               <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
               <li><Link href="/mission" className="text-muted-foreground hover:text-primary transition-colors">Mission & Vision</Link></li>
-              <li><Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors">Our Projects</Link></li>
+              <li><Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors">Our Programs</Link></li>
               <li><Link href="/team" className="text-muted-foreground hover:text-primary transition-colors">Team</Link></li>
             </ul>
           </div>
@@ -49,7 +55,7 @@ export function Footer() {
         
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} BridgeTech. All rights reserved.</p>
-          <p>Pending 501(c)(3) Nonprofit Status</p>
+          <p>Pending 501(c)(3) Nonprofit Status · Est. 2024 · California</p>
         </div>
       </div>
     </footer>
