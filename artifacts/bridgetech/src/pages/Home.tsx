@@ -141,25 +141,19 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { grade: "Grades 3–6", lang: "HTML, CSS & JS", desc: "Build real webpages from scratch using the foundational languages of the web.", badge: "Active", badgeClass: "bg-green-500/10 text-green-600", accent: "bg-sky-400", emoji: "🌐" },
-              { grade: "Grades 7–12", lang: "Python", desc: "From algorithms to projects — a full Python curriculum for middle and high schoolers.", badge: "Active", badgeClass: "bg-green-500/10 text-green-600", accent: "bg-amber-400", emoji: "🐍" },
-              { grade: "All Grades", lang: "Java", desc: "Object-oriented programming fundamentals. Our next cohort launches soon.", badge: "Coming Soon", badgeClass: "bg-primary/10 text-primary", accent: "bg-rose-400", emoji: "☕" },
-              { grade: "Elementary–HS", lang: "AI Crash Course", desc: "How AI works, what it means for the future, and how to build with it — level-adjusted per age group.", badge: "In Development", badgeClass: "bg-violet-500/10 text-violet-600", accent: "bg-violet-400", emoji: "🤖" },
+              { grade: "Grades 3–6", lang: "HTML, CSS & JS", desc: "Build real webpages from scratch using the foundational languages of the web.", badge: "Active", badgeClass: "bg-green-500/10 text-green-600" },
+              { grade: "Grades 7–12", lang: "Python", desc: "From algorithms to projects — a full Python curriculum for middle and high schoolers.", badge: "Active", badgeClass: "bg-green-500/10 text-green-600" },
+              { grade: "All Grades", lang: "Java", desc: "Object-oriented programming fundamentals. Our next cohort launches soon.", badge: "Coming Soon", badgeClass: "bg-primary/10 text-primary" },
+              { grade: "Elementary–HS", lang: "AI Crash Course", desc: "How AI works, what it means for the future, and how to build with it — level-adjusted per age group.", badge: "In Development", badgeClass: "bg-secondary/10 text-secondary-foreground" },
             ].map((prog, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="h-full bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 group">
-                  <div className={`h-1.5 w-full ${prog.accent}`} />
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${prog.badgeClass}`}>
-                        {prog.badge}
-                      </div>
-                      <span className="text-2xl">{prog.emoji}</span>
-                    </div>
-                    <p className="text-xs text-muted-foreground font-medium mb-1 uppercase tracking-wider">{prog.grade}</p>
-                    <h3 className="text-xl font-serif font-bold mb-3 group-hover:text-primary transition-colors">{prog.lang}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{prog.desc}</p>
+                <div className="h-full bg-card border border-border rounded-2xl p-6 hover:border-primary/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                  <div className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold mb-4 ${prog.badgeClass}`}>
+                    {prog.badge}
                   </div>
+                  <p className="text-xs text-muted-foreground font-medium mb-1 uppercase tracking-wider">{prog.grade}</p>
+                  <h3 className="text-xl font-serif font-bold mb-3">{prog.lang}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{prog.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -185,49 +179,29 @@ export default function Home() {
             </h2>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
-            {/* Saleh's story */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
             <ScrollReveal delay={0}>
-              <div className="h-full bg-card border border-border rounded-[2rem] p-8 md:p-10 flex flex-col relative overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300">
-                <div className="absolute top-4 right-6 text-8xl font-serif text-primary/8 select-none leading-none">"</div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-sm font-bold flex-shrink-0">S</div>
-                  <div>
-                    <p className="font-semibold text-sm">Saleh's Mom</p>
-                    <p className="text-xs text-muted-foreground">Parent of Middle School Student · Bay Area</p>
-                  </div>
-                  <span className="ml-auto inline-flex items-center rounded-full bg-green-500/10 text-green-700 px-3 py-1 text-xs font-semibold flex-shrink-0">AI Course Alum</span>
-                </div>
-                <blockquote className="text-foreground leading-relaxed text-[15px] mb-6 flex-1 italic">
-                  "Assalam Alaikum Lybah — just wanted to share that Saleh participated in a robotics competition (FLL Challenge) and won an award. He used Google Teachable Machine in his innovation project. He would not have achieved that without learning from you. Jazak Allah Khairan."
+              <div className="h-full bg-card border border-border rounded-2xl p-8 flex flex-col hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <div className="text-4xl font-serif text-primary/20 leading-none mb-4 select-none">"</div>
+                <blockquote className="text-foreground leading-relaxed text-[15px] flex-1 italic mb-6">
+                  He used Google Teachable Machine in his innovation project for the FLL Challenge robotics competition and won an award. He would not have achieved that without learning from you.
                 </blockquote>
-                <div className="pt-6 border-t border-border">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Saleh came in nervous about coding. He completed the program, launched a coding club at his school, then took what he learned in our AI course — Google Teachable Machine — and used it in a FIRST Lego League competition. He won.
-                  </p>
+                <div>
+                  <p className="font-semibold text-sm">Saleh's Mom</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">AI Course · Bay Area</p>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Affordable program mom */}
             <ScrollReveal delay={0.1}>
-              <div className="h-full bg-card border border-border rounded-[2rem] p-8 md:p-10 flex flex-col relative overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300">
-                <div className="absolute top-4 right-6 text-8xl font-serif text-primary/8 select-none leading-none">"</div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground text-sm font-bold flex-shrink-0">M</div>
-                  <div>
-                    <p className="font-semibold text-sm">A BridgeTech Parent</p>
-                    <p className="text-xs text-muted-foreground">Parent · Bay Area</p>
-                  </div>
-                  <span className="ml-auto inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold flex-shrink-0">Web Dev Program</span>
-                </div>
-                <blockquote className="text-foreground leading-relaxed text-[15px] mb-6 flex-1 italic">
-                  "I was honestly scared this was a scam — I'd never seen a program this good for this price. My child had been in a program that cost hundreds of dollars and barely learned anything. BridgeTech was completely different. Interactive, caring, and my child actually grew."
+              <div className="h-full bg-card border border-border rounded-2xl p-8 flex flex-col hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <div className="text-4xl font-serif text-primary/20 leading-none mb-4 select-none">"</div>
+                <blockquote className="text-foreground leading-relaxed text-[15px] flex-1 italic mb-6">
+                  I was scared it was a scam — I'd never seen a program this good for this price. My child had been in a program that cost hundreds and barely learned anything. BridgeTech was completely different.
                 </blockquote>
-                <div className="pt-6 border-t border-border">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Quality CS education shouldn't be a luxury. Our programs are $20–50 by design — and no student is ever turned away for financial need.
-                  </p>
+                <div>
+                  <p className="font-semibold text-sm">A Parent</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Web Dev Program · Bay Area</p>
                 </div>
               </div>
             </ScrollReveal>
