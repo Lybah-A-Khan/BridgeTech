@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "BridgeTech"
+version = "1.0.0"
+id = "artifacts/bridgetech"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23926
+
+[services.development]
+run = "pnpm --filter @workspace/bridgetech run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/bridgetech", "run", "build" ]
+publicDir = "artifacts/bridgetech/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23926"
+BASE_PATH = "/"
