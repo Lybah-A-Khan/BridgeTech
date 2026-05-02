@@ -1,6 +1,7 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TypewriterText } from "@/components/TypewriterText";
 import { MouseParallax } from "@/components/MouseParallax";
+import { LaptopMockup } from "@/components/LaptopMockup";
 import { Marquee } from "@/components/Marquee";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
@@ -83,31 +84,8 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.2} className="relative hidden lg:block h-[600px]">
-              <MouseParallax strength={8} className="absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-[3rem] overflow-hidden border border-border/50">
-                  <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, hsl(var(--primary)) 1px, transparent 0)', backgroundSize: '32px 32px' }} />
-                  <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary rounded-full mix-blend-multiply opacity-80 blur-xl animate-[float_6s_ease-in-out_infinite]" />
-                  <div className="absolute top-1/3 right-1/4 w-40 h-40 bg-secondary rounded-full mix-blend-multiply opacity-80 blur-xl animate-[float_8s_ease-in-out_infinite_reverse]" />
-                  <div className="absolute bottom-1/4 left-1/3 w-36 h-36 bg-accent rounded-full mix-blend-multiply opacity-80 blur-xl animate-[float_7s_ease-in-out_infinite_1s]" />
-                  <div className="absolute inset-8 border border-white/20 rounded-[2rem] bg-white/10 backdrop-blur-sm p-8 flex flex-col justify-end shadow-2xl">
-                    <div className="w-full bg-card/80 backdrop-blur rounded-xl p-6 border border-border/50 shadow-lg">
-                      <div className="flex gap-2 mb-4">
-                        <div className="w-3 h-3 rounded-full bg-destructive/80" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
-                        <div className="w-3 h-3 rounded-full bg-green-400/80" />
-                      </div>
-                      <div className="space-y-3 font-mono text-sm text-muted-foreground">
-                        <p><span className="text-primary">const</span> <span className="text-foreground">mission</span> = <span className="text-secondary">"bridge the gap"</span>;</p>
-                        <p><span className="text-primary">function</span> <span className="text-foreground">empower</span>(student) {'{'}</p>
-                        <p className="pl-4">return student.<span className="text-foreground">learn</span>(<span className="text-secondary">"code"</span>);</p>
-                        <p>{'}'}</p>
-                        <p className="pt-2 text-primary font-bold animate-pulse">_</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </MouseParallax>
+            <ScrollReveal delay={0.2} className="hidden lg:flex items-center justify-center">
+              <LaptopMockup />
             </ScrollReveal>
           </div>
         </div>

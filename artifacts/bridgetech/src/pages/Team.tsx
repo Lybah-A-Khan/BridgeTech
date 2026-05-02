@@ -1,6 +1,6 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { TiltCard } from "@/components/TiltCard";
-import { Linkedin, Plus } from "lucide-react";
+import { FlipCard } from "@/components/FlipCard";
+import { Linkedin, Plus, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
@@ -24,22 +24,10 @@ const coreTeam = [
 ];
 
 const openRoles = [
-  {
-    role: "Program Coordinator",
-    desc: "Organize workshops, manage curriculum delivery, and support our student cohorts from enrollment to completion.",
-  },
-  {
-    role: "Outreach Lead",
-    desc: "Build relationships with schools, community centers, and local organizations to expand BridgeTech's reach across California.",
-  },
-  {
-    role: "Volunteer Coordinator",
-    desc: "Recruit, onboard, and manage volunteers and mentors who run sessions and support students in our programs.",
-  },
-  {
-    role: "Social Media Manager",
-    desc: "Grow BridgeTech's presence on Instagram and LinkedIn, tell our story, and connect us with students, partners, and supporters.",
-  },
+  { role: "Program Coordinator", desc: "Organize workshops, manage curriculum delivery, and support our student cohorts from enrollment to completion." },
+  { role: "Outreach Lead", desc: "Build relationships with schools, community centers, and local organizations to expand BridgeTech's reach across California." },
+  { role: "Volunteer Coordinator", desc: "Recruit, onboard, and manage volunteers and mentors who run sessions and support students in our programs." },
+  { role: "Social Media Manager", desc: "Grow BridgeTech's presence on Instagram and LinkedIn, tell our story, and connect us with students, partners, and supporters." },
 ];
 
 export default function Team() {
@@ -48,8 +36,7 @@ export default function Team() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
 
-          {/* Heading */}
-          <ScrollReveal className="text-center mb-20">
+          <ScrollReveal className="text-center mb-6">
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
               The <span className="text-primary italic">Team</span>.
             </h1>
@@ -58,36 +45,56 @@ export default function Team() {
             </p>
           </ScrollReveal>
 
-          {/* Core Team */}
+          <ScrollReveal delay={0.05} className="flex justify-center mb-14">
+            <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground bg-muted px-3 py-1.5 rounded-full border border-border">
+              <RotateCcw size={11} /> Click a card to flip
+            </span>
+          </ScrollReveal>
+
+          {/* Core Team - flip cards */}
           <div className="grid md:grid-cols-2 gap-8 mb-24 max-w-2xl mx-auto">
             {coreTeam.map((member, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <TiltCard intensity={6}>
-                  <div className={`h-full bg-card rounded-[2rem] border p-8 flex flex-col items-center text-center
-                    ${member.highlight
-                      ? "border-primary/40 shadow-lg bg-primary/5"
-                      : "border-border shadow-sm hover:border-primary/30 hover:shadow-md"
-                    } transition-all duration-300`}
-                  >
-                    <div className={`w-28 h-28 rounded-full mb-6 flex items-center justify-center text-3xl font-serif font-bold
-                      ${member.highlight ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"}`}
+                <FlipCard
+                  className="h-80"
+                  front={
+                    <div className={`h-full bg-card rounded-[2rem] border p-8 flex flex-col items-center justify-center text-center
+                      ${member.highlight ? "border-primary/40 bg-primary/5" : "border-border hover:border-primary/30"}
+                      transition-colors duration-300`}
                     >
-                      {member.initials}
+                      <div className={`w-24 h-24 rounded-full mb-5 flex items-center justify-center text-3xl font-serif font-bold
+                        ${member.highlight ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"}`}>
+                        {member.initials}
+                      </div>
+                      <h3 className="text-2xl font-serif font-bold mb-1">{member.name}</h3>
+                      <p className="text-primary font-semibold text-sm">{member.role}</p>
                     </div>
-                    <h3 className="text-2xl font-serif font-bold mb-1">{member.name}</h3>
-                    <p className="text-primary font-semibold text-sm mb-4">{member.role}</p>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">{member.bio}</p>
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-                      data-testid={`link-team-linkedin-${i}`}
+                  }
+                  back={
+                    <div className={`h-full bg-card rounded-[2rem] border p-8 flex flex-col items-center justify-center text-center
+                      ${member.highlight ? "border-primary bg-primary text-primary-foreground" : "border-primary/40 bg-foreground text-background"}
+                      transition-colors`}
                     >
-                      <Linkedin size={15} /> Connect on LinkedIn
-                    </a>
-                  </div>
-                </TiltCard>
+                      <h3 className="text-xl font-serif font-bold mb-4">{member.name}</h3>
+                      <p className={`text-sm leading-relaxed mb-6 ${member.highlight ? "text-primary-foreground/85" : "text-background/75"}`}>
+                        {member.bio}
+                      </p>
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className={`inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-full border transition-colors
+                          ${member.highlight
+                            ? "border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                            : "border-background/30 text-background hover:bg-background hover:text-foreground"
+                          }`}
+                      >
+                        <Linkedin size={14} /> Connect on LinkedIn
+                      </a>
+                    </div>
+                  }
+                />
               </ScrollReveal>
             ))}
           </div>
@@ -100,7 +107,7 @@ export default function Team() {
               <div className="flex-1 h-px bg-border" />
             </div>
             <p className="text-center text-muted-foreground mt-3 max-w-xl mx-auto">
-              BridgeTech is growing. These roles are open to high schoolers, college students, and anyone passionate about education equity. No experience required — just commitment.
+              Open to high schoolers, college students, and anyone passionate about education equity. No experience required — just commitment.
             </p>
           </ScrollReveal>
 
