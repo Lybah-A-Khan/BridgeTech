@@ -1,6 +1,7 @@
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TypewriterText } from "@/components/TypewriterText";
 import { MouseParallax } from "@/components/MouseParallax";
+import { Marquee } from "@/components/Marquee";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { ArrowRight, Code2, Users, Building2, GraduationCap } from "lucide-react";
@@ -112,6 +113,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Marquee */}
+      <Marquee />
+
       {/* Stats Section */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6 md:px-12">
@@ -137,19 +141,25 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { grade: "Grades 3–6", lang: "HTML, CSS & JS", desc: "Build real webpages from scratch using the foundational languages of the web.", badge: "Active", badgeClass: "bg-green-500/10 text-green-600" },
-              { grade: "Grades 7–12", lang: "Python", desc: "From algorithms to projects — a full Python curriculum for middle and high schoolers.", badge: "Active", badgeClass: "bg-green-500/10 text-green-600" },
-              { grade: "All Grades", lang: "Java", desc: "Object-oriented programming fundamentals. Our next cohort launches soon.", badge: "Coming Soon", badgeClass: "bg-primary/10 text-primary" },
-              { grade: "Elementary–HS", lang: "AI Crash Course", desc: "How AI works, what it means for the future, and how to build with it — level-adjusted per age group.", badge: "In Development", badgeClass: "bg-secondary/10 text-secondary-foreground" },
+              { grade: "Grades 3–6", lang: "HTML, CSS & JS", desc: "Build real webpages from scratch using the foundational languages of the web.", badge: "Active", badgeClass: "bg-green-500/10 text-green-600", accent: "bg-sky-400", emoji: "🌐" },
+              { grade: "Grades 7–12", lang: "Python", desc: "From algorithms to projects — a full Python curriculum for middle and high schoolers.", badge: "Active", badgeClass: "bg-green-500/10 text-green-600", accent: "bg-amber-400", emoji: "🐍" },
+              { grade: "All Grades", lang: "Java", desc: "Object-oriented programming fundamentals. Our next cohort launches soon.", badge: "Coming Soon", badgeClass: "bg-primary/10 text-primary", accent: "bg-rose-400", emoji: "☕" },
+              { grade: "Elementary–HS", lang: "AI Crash Course", desc: "How AI works, what it means for the future, and how to build with it — level-adjusted per age group.", badge: "In Development", badgeClass: "bg-violet-500/10 text-violet-600", accent: "bg-violet-400", emoji: "🤖" },
             ].map((prog, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="h-full bg-card border border-border rounded-2xl p-6 hover:border-primary/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                  <div className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold mb-4 ${prog.badgeClass}`}>
-                    {prog.badge}
+                <div className="h-full bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 group">
+                  <div className={`h-1.5 w-full ${prog.accent}`} />
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${prog.badgeClass}`}>
+                        {prog.badge}
+                      </div>
+                      <span className="text-2xl">{prog.emoji}</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground font-medium mb-1 uppercase tracking-wider">{prog.grade}</p>
+                    <h3 className="text-xl font-serif font-bold mb-3 group-hover:text-primary transition-colors">{prog.lang}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{prog.desc}</p>
                   </div>
-                  <p className="text-xs text-muted-foreground font-medium mb-1 uppercase tracking-wider">{prog.grade}</p>
-                  <h3 className="text-xl font-serif font-bold mb-3">{prog.lang}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{prog.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
