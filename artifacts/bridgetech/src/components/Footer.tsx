@@ -17,7 +17,7 @@ export function Footer() {
               <span className="font-serif text-2xl font-bold tracking-tight text-primary">BridgeTech</span>
             </Link>
             <p className="text-muted-foreground max-w-sm mb-2 leading-relaxed">
-              Bridging the gap in computer science education for underserved communities. Connecting generations through technology since 2024.
+              Bridging the gap in computer science education for underserved communities. Based in the Bay Area — open to expanding wherever the need is.
             </p>
             <p className="text-muted-foreground/70 text-sm mb-6 max-w-sm">
               Programs start at $20–50. No student is turned away for financial need.
@@ -55,7 +55,7 @@ export function Footer() {
         
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} BridgeTech. All rights reserved.</p>
-          <p>Pending 501(c)(3) Nonprofit Status · Est. 2024 · California</p>
+          <p>Pending 501(c)(3) Nonprofit Status · Est. 2024 · Bay Area, CA · Open to new chapters nationwide</p>
         </div>
       </div>
     </footer>

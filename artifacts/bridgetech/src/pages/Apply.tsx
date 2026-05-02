@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { fireConfetti } from "@/lib/confetti";
 
 export default function Apply() {
   const { toast } = useToast();
@@ -27,16 +28,18 @@ export default function Apply() {
         formRef.current,
         "placeholder_public_key"
       );
+      fireConfetti(0.5, 0.5);
       toast({
-        title: "Application Received",
+        title: "Application Received 🎉",
         description: "Thank you for your interest! We'll reach out to you at bridgetech24@gmail.com shortly.",
       });
       formRef.current.reset();
       setRole("");
       setAgeGroup("");
     } catch {
+      fireConfetti(0.5, 0.5);
       toast({
-        title: "Application Submitted",
+        title: "Application Submitted 🎉",
         description: "We've received your interest. Expect a reply at bridgetech24@gmail.com.",
       });
       formRef.current.reset();

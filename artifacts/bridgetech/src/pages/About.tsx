@@ -16,7 +16,7 @@ export default function About() {
 
           <ScrollReveal delay={0.1} className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-serif prose-a:text-primary">
             <p className="text-xl text-muted-foreground leading-relaxed">
-              BridgeTech started with a simple observation: the digital divide is real, and it's holding brilliant minds back. Founded in 2024 by high school student Lybah A. Khan, BridgeTech was built to make computer science education accessible — regardless of background, zip code, or budget.
+              BridgeTech started with a simple observation: the digital divide is real, and it's holding brilliant minds back. Founded in 2024 by high school student Lybah A. Khan in the Bay Area, BridgeTech was built to make computer science education accessible — regardless of background, zip code, or budget. We're rooted in Northern California and open to expanding wherever a community is ready to build a chapter.
             </p>
 
             <h3 className="text-3xl mt-12 mb-6">The Founding Story</h3>
@@ -36,6 +36,14 @@ export default function About() {
                 <p className="text-muted-foreground font-medium ml-6">— Lybah A. Khan, Founder</p>
               </div>
             </div>
+
+            <h3 className="text-3xl mt-12 mb-6">Impact in Action</h3>
+            <p>
+              One of our middle school students, Saleh, arrived nervous about coding — unsure if it was really "for him." He completed the full program, loved it so much he started a coding club at his own school, and then used what he learned in our AI course — specifically Google Teachable Machine — to build an innovation project for a FIRST Lego League (FLL) robotics competition. He won an award. His mom reached out: <em>"He would not have achieved that without learning from you."</em>
+            </p>
+            <p>
+              That's what BridgeTech is for. Not just teaching syntax — opening doors.
+            </p>
 
             <h3 className="text-3xl mt-12 mb-6">Affordable by Design</h3>
             <p>
