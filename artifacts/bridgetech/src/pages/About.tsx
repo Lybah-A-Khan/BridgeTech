@@ -7,8 +7,8 @@ const milestones = [
   {
     year: "2023",
     label: "The Idea Begins",
-    desc: "Lybah A. Khan notices the gap firsthand — brilliant students around her in the Bay Area with no real access to CS education. The seed is planted: what if someone actually did something about it?",
-    stat: "1 person. 1 conviction. A plan starting to form.",
+    desc: "Lybah A. Khan sees a clear gap in her own community: there are no affordable CS programs for kids who actually need them. Rather than waiting for someone else to fix it, she decides to build one herself.",
+    stat: "1 gap spotted. 1 person who decided to fill it.",
   },
   {
     year: "2024",
@@ -148,7 +148,7 @@ export default function About() {
               From High School to <span className="text-primary italic">Real Impact</span>.
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              The idea started in 2023 — a simple observation that brilliant students had ambition but no access. It took a full year of building: curriculum design, finding the right people, forming real partnerships. BridgeTech officially launched in 2024 and hit the ground running in January 2025.
+              In 2023, Lybah A. Khan noticed something missing in her own community: there were simply no affordable CS programs for kids who needed them. So she built one. A year of groundwork — curriculum, partners, people — and BridgeTech officially launched in 2024, with its first pilot running in January 2025.
             </p>
           </ScrollReveal>
 
