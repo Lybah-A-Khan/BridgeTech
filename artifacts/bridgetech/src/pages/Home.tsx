@@ -91,9 +91,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Marquee */}
-      <Marquee />
-
       {/* Stats Section */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6 md:px-12">
@@ -186,6 +183,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Marquee — bottom of page */}
+      <Marquee />
 
       {/* Newsletter */}
       <section className="py-24 bg-card">
