@@ -147,39 +147,84 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-12">
           <ScrollReveal className="max-w-2xl mb-14">
             <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm text-primary mb-6 font-medium">
-              Real Families. Real Impact.
+              Real Families. Real Students. Real Impact.
             </div>
             <h2 className="text-4xl md:text-5xl font-serif font-bold">
               What Happens <span className="text-primary italic">After</span> Class.
             </h2>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
-            <ScrollReveal delay={0}>
-              <div className="h-full bg-card border border-border rounded-2xl p-8 flex flex-col hover:shadow-md hover:border-primary/30 transition-all duration-300">
-                <div className="text-4xl font-serif text-primary/20 leading-none mb-4 select-none">"</div>
-                <blockquote className="text-foreground leading-relaxed text-[15px] flex-1 italic mb-6">
-                  He used Google Teachable Machine in his innovation project for the FLL Challenge robotics competition and won an award. He would not have achieved that without learning from you.
-                </blockquote>
-                <div>
-                  <p className="font-semibold text-sm">Saleh's Mom</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">Python Course · Bay Area</p>
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            {[
+              {
+                quote: "When I first put my son in this class, I was skeptical about what could be taught in 6 weeks — but mashAllah, you guys did amazing!",
+                name: "A Parent",
+                tag: "Pilot Program · Bay Area",
+                highlight: false,
+              },
+              {
+                quote: "I didn't know anything before. Now I know how to use functions and print statements. I tell my uncle — who's a programmer — everything I learn!",
+                name: "A Student",
+                tag: "Python Course",
+                highlight: false,
+              },
+              {
+                quote: "He used Google Teachable Machine in his innovation project for the FLL Challenge robotics competition and won an award. He would not have achieved that without learning from you.",
+                name: "Saleh's Mom",
+                tag: "Python Course · Bay Area",
+                highlight: true,
+              },
+              {
+                quote: "My son loved the Python class — he's planning to start a Python club at his school now!",
+                name: "A Parent",
+                tag: "Python Course · Bay Area",
+                highlight: false,
+              },
+              {
+                quote: "I didn't want to come to class at first, but now I'm hooked on coding.",
+                name: "A Student",
+                tag: "Python Course",
+                highlight: false,
+              },
+              {
+                quote: "My daughter enjoyed the class. She loved Mentor Lybah's fun conversations, and I really appreciated the assignments given after class so students could apply what they learned.",
+                name: "A Parent",
+                tag: "HTML/AI Course · Bay Area",
+                highlight: false,
+              },
+              {
+                quote: "Thank you so much for opening this program, especially for the Muslim youth. They absolutely loved it!",
+                name: "A Parent",
+                tag: "Bay Area Community",
+                highlight: false,
+              },
+              {
+                quote: "The high schoolers are doing a great job, mashAllah! My daughter was able to attend the live class and loved it.",
+                name: "A Parent",
+                tag: "Web Dev Program",
+                highlight: false,
+              },
+              {
+                quote: "I enjoy how the mentors explain things in goofy and relatable ways. It makes it so much easier to understand.",
+                name: "A Student",
+                tag: "HTML/AI Course",
+                highlight: false,
+              },
+            ].map((t, i) => (
+              <ScrollReveal key={i} delay={i * 0.05} className="break-inside-avoid">
+                <div className={`bg-card border rounded-2xl p-7 flex flex-col hover:shadow-md transition-all duration-300 mb-6
+                  ${t.highlight ? "border-primary/40 bg-primary/5" : "border-border hover:border-primary/25"}`}>
+                  <div className="text-3xl font-serif text-primary/20 leading-none mb-3 select-none">"</div>
+                  <blockquote className="text-foreground leading-relaxed text-[14px] flex-1 italic mb-5">
+                    {t.quote}
+                  </blockquote>
+                  <div>
+                    <p className={`font-semibold text-sm ${t.highlight ? "text-primary" : ""}`}>{t.name}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">{t.tag}</p>
+                  </div>
                 </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.1}>
-              <div className="h-full bg-card border border-border rounded-2xl p-8 flex flex-col hover:shadow-md hover:border-primary/30 transition-all duration-300">
-                <div className="text-4xl font-serif text-primary/20 leading-none mb-4 select-none">"</div>
-                <blockquote className="text-foreground leading-relaxed text-[15px] flex-1 italic mb-6">
-                  I was scared it was a scam — I'd never seen a program this good for this price. My child had been in a program that cost hundreds and barely learned anything. BridgeTech was completely different.
-                </blockquote>
-                <div>
-                  <p className="font-semibold text-sm">A Parent</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">Web Dev Program · Bay Area</p>
-                </div>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>

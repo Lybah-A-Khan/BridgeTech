@@ -184,6 +184,53 @@ export default function About() {
             </div>
           </ScrollReveal>
 
+          {/* Community recommendation */}
+          <ScrollReveal className="mb-16">
+            <div className="bg-muted border border-border rounded-[2rem] p-8 md:p-10">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary mb-4">Community Partner</p>
+              <blockquote className="text-lg md:text-xl font-serif italic text-foreground leading-relaxed mb-6">
+                "I highly recommend BridgeTech. They delivered a highly professional and engaging program for kids focused on coding and Python at MCA. Their structured, hands-on approach not only makes learning accessible and fun — it empowers students with real technical skills that build confidence and curiosity."
+              </blockquote>
+              <div>
+                <p className="font-semibold text-sm">Indira Kaljo</p>
+                <p className="text-xs text-muted-foreground mt-0.5">Director of Community · MCA Program, Bay Area</p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Bake sale + grassroots story */}
+          <ScrollReveal className="mb-16">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="flex-1 h-px bg-border" />
+              <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Grassroots Fundraising</span>
+              <div className="flex-1 h-px bg-border" />
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-serif font-bold mb-4">We baked our way to independence.</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  When students showed up without laptops, BridgeTech didn't wait for a grant. We organized a community bake sale — 10 hours of baking, 4 hours at the booth — and raised $2,000 entirely through community support.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Half went to purchasing 5 Chromebooks for students without device access. The other half covered the 501(c)(3) filing costs — making BridgeTech fully independent, no longer relying on fiscal sponsorship.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { num: "$2,000", label: "Raised at the bake sale" },
+                  { num: "5", label: "Chromebooks purchased for students" },
+                  { num: "10 hrs", label: "Spent baking together" },
+                  { num: "100%", label: "Community funded" },
+                ].map((s, i) => (
+                  <div key={i} className="bg-card border border-border rounded-2xl p-5 text-center hover:border-primary/30 transition-all">
+                    <p className="text-2xl font-serif font-bold text-primary mb-1">{s.num}</p>
+                    <p className="text-xs text-muted-foreground leading-snug">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
           {/* Affordable + Nonprofit */}
           <ScrollReveal className="grid md:grid-cols-2 gap-8">
             {[
@@ -193,9 +240,9 @@ export default function About() {
                 badge: "$20–$50 · No student turned away",
               },
               {
-                title: "Path to 501(c)(3)",
-                body: "BridgeTech is in the process of becoming a registered nonprofit in California. This reflects our commitment to long-term sustainability, expanded reach, and deeper partnerships with schools and organizations.",
-                badge: "Nonprofit status in progress",
+                title: "Becoming a 501(c)(3)",
+                body: "BridgeTech initially operated under fiscal sponsorship through Connect For Purpose, a California nonprofit. We've since raised funds independently and are now covering all paperwork ourselves — on the path to full nonprofit status.",
+                badge: "Fully independent · 501(c)(3) in progress",
               },
             ].map((item, i) => (
               <div key={i} className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 hover:shadow-md transition-all duration-300">
