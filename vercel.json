@@ -1,4 +1,6 @@
 {
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm --filter @workspace/bridgetech run build",
   "outputDirectory": "artifacts/bridgetech/dist/public",
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
