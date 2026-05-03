@@ -5,64 +5,37 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const milestones = [
   {
-    year: "2024",
-    label: "BridgeTech Founded",
-    desc: "Lybah A. Khan, a high school student in the Bay Area, notices that brilliant kids around her have no real access to CS education. She starts teaching a handful of local students the basics of programming — out of genuine belief that it matters.",
-    stat: "1 instructor. A handful of students. A big idea.",
+    year: "2023",
+    label: "The Idea Begins",
+    desc: "Lybah A. Khan notices the gap firsthand — brilliant students around her in the Bay Area with no real access to CS education. The seed is planted: what if someone actually did something about it?",
+    stat: "1 person. 1 conviction. A plan starting to form.",
   },
   {
     year: "2024",
-    label: "First Cohort Launched",
-    desc: "The first structured program kicks off — HTML & CSS for grades 3–6. Students build and publish their very first webpages. The energy is electric. Word spreads fast through the community.",
-    stat: "First student webpage goes live.",
+    label: "Building the Foundation",
+    desc: "A full year of behind-the-scenes work — designing curriculum from scratch, finding the right people, forming community partnerships, and laying the groundwork to do this right. BridgeTech officially takes shape as an organization.",
+    stat: "Curriculum · Team · Partnerships · Structure",
   },
   {
-    year: "2024",
-    label: "Community Partners",
-    desc: "BridgeTech partners with 3+ community centers across Northern California, embedding programs directly where families already trust and gather. No commute barriers. No unfamiliar spaces. Just coding.",
-    stat: "3+ partner locations · Bay Area",
-  },
-  {
-    year: "2024–25",
-    label: "150+ Students Impacted",
-    desc: "Python joins the curriculum for grades 7–12. The program scales without losing its community feel. Over 150 students have now learned to build something real — and many keep going on their own.",
-    stat: "150+ students · 2 active programs",
+    year: "Jan 2025",
+    label: "Pilot Program Launches",
+    desc: "BridgeTech runs its first official pilot program in January 2025 — a 6-week structured cohort with real students, real curriculum, and real results. The model works.",
+    stat: "First cohort · 6-week format · Bay Area",
   },
   {
     year: "2025",
-    label: "Saleh's FLL Win",
-    desc: "Middle schooler Saleh uses Google Teachable Machine — an AI tool introduced in the Python course — to build an innovation project for the FIRST Lego League robotics competition. He wins an award. His mom writes in: \"He would not have achieved that without learning from you.\"",
-    stat: "FLL award · Python + AI · Bay Area",
+    label: "4 Programs. 150+ Students.",
+    desc: "Over the course of 2025, BridgeTech runs 4 different programs — each 6 weeks long — across the Bay Area. 150+ students go through the curriculum. One program has already wrapped in early 2025, with 2 new ones launching due to growing interest.",
+    stat: "4 programs · 150+ students · 6 weeks each",
+  },
+  {
+    year: "2026–2027",
+    label: "Expanding the Reach",
+    desc: "The goal: embed BridgeTech into after-school clubs and additional community centers across California. Making the program a permanent fixture — not a one-time visit — in the communities that need it most.",
+    stat: "Goal: after-school clubs · more community centers",
   },
 ];
 
-const storySteps = [
-  {
-    step: "01",
-    title: "He arrived nervous.",
-    body: "Saleh walked into his first BridgeTech Python session unsure if coding was really \"for him.\" He'd never written a line of code before.",
-  },
-  {
-    step: "02",
-    title: "He finished the whole program.",
-    body: "Week after week, he showed up. He struggled through loops and functions — and then something clicked. He completed the full curriculum.",
-  },
-  {
-    step: "03",
-    title: "He started a coding club.",
-    body: "Inspired, Saleh went back to his school and started a coding club. He began teaching other students what he'd learned — on his own.",
-  },
-  {
-    step: "04",
-    title: "He built an AI model.",
-    body: "Using Google Teachable Machine — an AI tool introduced in the BridgeTech Python course — he built an innovation project for a FIRST Lego League robotics competition.",
-  },
-  {
-    step: "05",
-    title: "He won.",
-    body: "Saleh won an FLL award. His mom reached out: \"He would not have achieved that without learning from you.\" That's why BridgeTech exists.",
-  },
-];
 
 function MilestoneTimeline() {
   const [current, setCurrent] = useState(0);
@@ -161,80 +134,6 @@ function MilestoneTimeline() {
   );
 }
 
-function SalehStory() {
-  const [step, setStep] = useState(0);
-  const s = storySteps[step];
-
-  return (
-    <div className="mb-24">
-      <ScrollReveal>
-        <div className="flex items-center gap-3 mb-8">
-          <div className="flex-1 h-px bg-border" />
-          <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Impact in Action</span>
-          <div className="flex-1 h-px bg-border" />
-        </div>
-      </ScrollReveal>
-
-      <ScrollReveal delay={0.05}>
-        <div className="bg-muted rounded-[2rem] border border-border overflow-hidden">
-          {/* Header */}
-          <div className="bg-primary/5 border-b border-border px-8 py-5 flex items-center justify-between">
-            <span className="text-sm font-bold text-primary uppercase tracking-wider">Saleh's Story</span>
-            <div className="flex gap-1.5">
-              {storySteps.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setStep(i)}
-                  className={`w-2 h-2 rounded-full transition-all cursor-pointer ${i === step ? "bg-primary scale-125" : i < step ? "bg-primary/40" : "bg-border"}`}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Story content */}
-          <div className="p-8 md:p-12 min-h-[220px] flex flex-col justify-between">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={step}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.28 }}
-              >
-                <span className="text-5xl font-serif font-bold text-primary/15 leading-none block mb-2 select-none">{s.step}</span>
-                <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">{s.title}</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">{s.body}</p>
-              </motion.div>
-            </AnimatePresence>
-
-            <div className="flex items-center justify-between mt-8">
-              <button
-                onClick={() => setStep((p) => Math.max(0, p - 1))}
-                disabled={step === 0}
-                className="flex items-center gap-2 px-4 py-2 rounded-full border border-border text-sm font-medium text-muted-foreground hover:border-primary/40 hover:text-foreground transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-              >
-                <ChevronLeft size={16} /> Back
-              </button>
-              {step < storySteps.length - 1 ? (
-                <button
-                  onClick={() => setStep((p) => Math.min(storySteps.length - 1, p + 1))}
-                  className="flex items-center gap-2 px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors cursor-pointer"
-                >
-                  Next <ChevronRight size={16} />
-                </button>
-              ) : (
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                  🏆 That's the whole story.
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
-      </ScrollReveal>
-    </div>
-  );
-}
-
 export default function About() {
   return (
     <div className="flex flex-col w-full min-h-[90vh]">
@@ -249,15 +148,28 @@ export default function About() {
               From High School to <span className="text-primary italic">Real Impact</span>.
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              BridgeTech started with a simple observation: the digital divide is real, and it's holding brilliant minds back. Founded in 2024 by Lybah A. Khan — a Bay Area high schooler with a clear-eyed conviction that CS education belongs to everyone.
+              The idea started in 2023 — a simple observation that brilliant students had ambition but no access. It took a full year of building: curriculum design, finding the right people, forming real partnerships. BridgeTech officially launched in 2024 and hit the ground running in January 2025.
             </p>
           </ScrollReveal>
 
           {/* Interactive milestone timeline */}
           <MilestoneTimeline />
 
-          {/* Saleh's story — click-through narrative */}
-          <SalehStory />
+          {/* Compact impact callout */}
+          <ScrollReveal className="mb-24">
+            <div className="grid sm:grid-cols-3 gap-4 text-center">
+              {[
+                { num: "150+", label: "Students reached in year one" },
+                { num: "4", label: "Programs run in 2025 alone" },
+                { num: "6 wks", label: "Per program — structured & hands-on" },
+              ].map((s, i) => (
+                <div key={i} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-sm transition-all">
+                  <p className="text-4xl font-serif font-bold text-primary mb-2">{s.num}</p>
+                  <p className="text-sm text-muted-foreground leading-snug">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
 
           {/* Founder quote */}
           <ScrollReveal className="mb-20">
