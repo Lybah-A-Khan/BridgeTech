@@ -2,6 +2,8 @@
 
 # compiled output
 dist
+!artifacts/bridgetech/dist
+!artifacts/bridgetech/dist/**
 tmp
 out-tsc
 *.tsbuildinfo
